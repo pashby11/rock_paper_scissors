@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        
+        function getComputerChoice() {
+            choices = ['rock', 'paper', 'scissors'];
+            randomIndex = Math.floor(Math.random()*3);
+            return choices[randomIndex]
+        }
+
+        function getPlayerChoice() {
+            playerInput = prompt("Please choose enter 'rock', 'paper' or 'scissors':");
+            playerChoice = playerInput.toLowerCase()
+            return playerChoice
+        }
+
+        function playRound(playerSelection, computerSelection) {
+            if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
+                (playerSelection == 'paper' && computerSelection == 'rock') ||
+                (playerSelection == 'scissors' && computerSelection == 'paper')) {
+                message = `Congrats you win!! ${playerSelection} beats ${computerSelection}!!`;
+            } else if (playerSelection == computerSelection) {
+                message = `It's a draw you both chose ${playerSelection}!`;
+            } else {
+                message = `You lose :( ${computerSelection} beats ${playerSelection}!`;
+            }
+            return message
+        }
+
+        let computerSelection = getComputerChoice()
+        let playerSelection = getPlayerChoice()
+
+        let result = playRound(playerSelection, computerSelection)
+
+        console.log(result)
+    </script>
+</body>
+</html>
