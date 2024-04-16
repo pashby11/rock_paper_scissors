@@ -75,7 +75,16 @@
         result = playRound(playerSelection, computerSelection)
         playerWinCount += result[1]
         computerWinCount += result[2]
-        console.log(`${result[0]}, The final win count is ${playerWinCount} wins to the player and ${computerWinCount} wins to the computer`)
+        console.log(`${result[0]}`)
+        if(playerWinCount>computerWinCount) {
+            console.log(`Player wins with ${playerWinCount} victories`);
+        } 
+        else if(playerWinCount == computerWinCount) {
+            console.log(`It's a tie`);
+        }
+        else {
+            console.log(`Computer wins with ${computerWinCount} victories`)
+        }
         }
         
         playGame()
