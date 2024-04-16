@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock! Paper! Scissors!</title>
 </head>
 <body>
     <script>
@@ -17,29 +17,69 @@
 
         function getPlayerChoice() {
             playerInput = prompt("Please choose enter 'rock', 'paper' or 'scissors':");
-            playerChoice = playerInput.toLowerCase()
-            return playerChoice
+            return playerInput.toLowerCase()
         }
 
         function playRound(playerSelection, computerSelection) {
+            let playerWinIndicator = 0;
+            let computerWinIndicator = 0;
             if ((playerSelection == 'rock' && computerSelection == 'scissors') ||
                 (playerSelection == 'paper' && computerSelection == 'rock') ||
                 (playerSelection == 'scissors' && computerSelection == 'paper')) {
                 message = `Congrats you win!! ${playerSelection} beats ${computerSelection}!!`;
+                playerWinIndicator = 1;
             } else if (playerSelection == computerSelection) {
-                message = `It's a draw you both chose ${playerSelection}!`;
+                message = `It's a draw, you both chose ${playerSelection}!`;
             } else {
                 message = `You lose :( ${computerSelection} beats ${playerSelection}!`;
+                computerWinIndicator = 1;
             }
-            return message
+            return [message, playerWinIndicator, computerWinIndicator]
         }
+
+        function playGame() {
+       
+        let playerWinCount = 0;
+        let computerWinCount = 0;
 
         let computerSelection = getComputerChoice()
         let playerSelection = getPlayerChoice()
-
         let result = playRound(playerSelection, computerSelection)
+        playerWinCount += result[1]
+        computerWinCount += result[2]
+        console.log(result[0])
 
-        console.log(result)
+        computerSelection = getComputerChoice()
+        playerSelection = getPlayerChoice()
+        result = playRound(playerSelection, computerSelection)
+        playerWinCount += result[1]
+        computerWinCount += result[2]
+        console.log(result[0])
+
+        computerSelection = getComputerChoice()
+        playerSelection = getPlayerChoice()
+        result = playRound(playerSelection, computerSelection)
+        playerWinCount += result[1]
+        computerWinCount += result[2]
+        console.log(result[0])
+
+        computerSelection = getComputerChoice()
+        playerSelection = getPlayerChoice()
+        result = playRound(playerSelection, computerSelection)
+        playerWinCount += result[1]
+        computerWinCount += result[2]
+        console.log(result[0])
+
+        computerSelection = getComputerChoice()
+        playerSelection = getPlayerChoice()
+        result = playRound(playerSelection, computerSelection)
+        playerWinCount += result[1]
+        computerWinCount += result[2]
+        console.log(`${result[0]}, The final win count is ${playerWinCount} wins to the player and ${computerWinCount} wins to the computer`)
+        }
+        
+        playGame()
+        
     </script>
 </body>
 </html>
