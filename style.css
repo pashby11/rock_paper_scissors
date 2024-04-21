@@ -1,0 +1,45 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    height:100vh;
+}
+
+
+.body2{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+    flex:1;
+}
+
+.score_count{
+    display:flex;
+    gap: 50px;
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
+
+}
+
+.playerScore {
+    border: 2px solid greenyellow;
+    background-color: lightgreen;
+    color: green;
+}
+
+.compScore{
+    border: 2px solid red;
+    background-color: lightcoral;
+    color: darkred;
+}
+
+.playerScore.compScore{
+    width: 200px;
+    height: 200px;
+    font-size: 40px;
+
+}
